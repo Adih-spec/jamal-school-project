@@ -52,3 +52,61 @@ ul{
     color: #ddd;
 }
 
+/* --- MAIN HEADER (Blue) --- */
+        .main-header {
+            background-color: var(--main-bar-bg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 90px;
+            /* No padding on left because logo box touches edge, padding on right */
+            padding-right: 40px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        /* --- LOGO SECTION (White Box) --- */
+        .logo-container {
+            background-color: var(--white);
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding: 0 30px;
+            gap: 15px;
+            /* Create the slant effect or just keep it rectangular based on simple CSS */
+            position: relative;
+        }
+
+        .logo-icon {
+            /* Placeholder for the horse/state logo */
+            width: 50px;
+            height: 50px;
+            background-color: #3b5586; /* Fallback color */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo-icon img {
+            width: 100%;
+            height: auto;
+        }
+
+        .logo-text h1 {
+            color: var(--logo-text-color);
+            font-family: 'Georgia', serif; /* Serif font for the title */
+            font-size: 22px;
+            line-height: 1.1;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .logo-text p {
+            color: var(--logo-text-color);
+            font-family: 'Georgia', serif;
+            font-style: italic;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        /* --- RIGHT NAVIGATION --- */
+        
