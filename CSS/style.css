@@ -17,3 +17,24 @@ a{
 ul{
     list-style: none;
 }
+
+/* --- COLORS --- */
+:root {
+    --top-bar-bg: #1a1a1a;
+    --main-bar-bg: #44558e; 
+    --logo-text-color: #3b5586;
+    --white: #ffffff;
+    --hover-bg: #334270;
+}
+
+/* --- TOP UTILITY BAR (Black) --- */
+.top-bar {
+    background-color: var(--top-bar-bg);
+    color: var(--white);
+    display: flex;
+    justify-content: flex-end;
+    padding: 8px 40px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
