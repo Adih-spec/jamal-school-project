@@ -24,3 +24,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+// Carousel Pause/Play Toggle
+const pauseBtn = document.querySelector('.control-btn.pause');
+let isPaused = false;
+
+pauseBtn.addEventListener('click', () => {
+    isPaused = !isPaused;
+    const icon = pauseBtn.querySelector('i');
+    
+    if (isPaused) {
+        icon.classList.replace('fa-pause', 'fa-play');
+        console.log("Carousel Paused");
+    } else {
+        icon.classList.replace('fa-play', 'fa-pause');
+        console.log("Carousel Playing");
+    }
+});
