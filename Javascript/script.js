@@ -24,19 +24,36 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
-// Carousel Pause/Play Toggle
-const pauseBtn = document.querySelector('.control-btn.pause');
-let isPaused = false;
+// Hero Slider
+const slides = document.querySelectorAll('.slide');
+const dotsContainer = document.getElementById('sliderDots');
+let currentSlide = 0;
+const slideInterval = 6000; // change slide every 6 seconds
 
-pauseBtn.addEventListener('click', () => {
-    isPaused = !isPaused;
-    const icon = pauseBtn.querySelector('i');
-    
-    if (isPaused) {
-        icon.classList.replace('fa-pause', 'fa-play');
-        console.log("Carousel Paused");
-    } else {
-        icon.classList.replace('fa-play', 'fa-pause');
-        console.log("Carousel Playing");
-    }
+// Create dots
+slides.forEach((_, index) => {
+  const dot = document.createElement('div');
+  dot.classList.add('dot');
+  if (index === 0) dot.classList.add('active');
+  dot.addEventListener('click', () => goToSlide(index));
+  dotsContainer.appendChild(dot);
 });
+
+const dots = document.querySelectorAll('.dot');
+
+function goToSlide(index) {
+  slides[currentSlide].classList.remove('active');
+  dots[currentSlide].classList.remove('active');
+  currentSlide = index;
+  slides[currentSlide].classList.add('active');
+  dots[currentSlide].classList.add('active');
+}
+
+function nextSlide() {
+  let next = currentSlide + 1;
+  if (next >= slides.length) next = 0;
+  goToSlide(next);
+}
+
+// Auto-advance
+setInterval(nextSlide, slideInterval);
